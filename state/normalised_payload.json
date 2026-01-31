@@ -1,0 +1,147 @@
+{
+  "eventId": "evt-20260130-001",
+  "timestamp": "2026-01-30T21:30:00Z",
+
+  "persona": {
+    "category": "STANDARD",
+    "prompt": null,
+    "version": "v1"
+  },
+
+  "channel": {
+    "type": "whatsapp",
+    "sourceId": "+919876543210",
+    "messageId": "wamid.HBgM...",
+    "metadata": {
+      "device": "android",
+      "client": "meta_whatsapp"
+    }
+  },
+
+  "user": {
+    "mobile": "+919876543210",
+    "cid": null,
+    "globalCustomerKey": "GCK_92f81",
+    "profile": {
+      "name": null,
+      "languagePreference": "en"
+    }
+  },
+
+  "message": {
+    "type": "text",
+    "text": "I want a new connection",
+    "language": "en",
+    "attachments": []
+  },
+
+  "nlp": {
+    "intent": {
+      "detected": "NEW_CONNECTION_HT",
+      "confidence": 0.91,
+      "intentLevel": "L2",
+      "isSwitch": false
+    },
+
+    "entities": {
+      "caNumber": null,
+      "location": null,
+      "journeyHint": null
+    },
+
+    "sentiment": "neutral"
+  },
+
+  "session": {
+    "sessionId": "sess_abc123",
+
+    "activeJourney": {
+      "journeyId": "NEW_CONNECTION_HT",
+      "journeyLevel": "L2",
+
+      "state": "IN_PROGRESS",
+      "currentStep": "property_ownership",
+
+      "execution": {
+        "executionArn": "arn:aws:states:ap-south-1:xxxx:execution:newconn-123",
+        "status": "RUNNING",
+        "startedAt": "2026-01-30T21:29:00Z"
+      },
+
+      "pauseContext": {
+        "isWaitingForUser": true,
+        "waitingStep": "property_ownership",
+        "expectedInputType": "FILE",
+        "taskToken": "TASK_TOKEN_ABC123",
+        "pausedAt": null
+      },
+
+      "collectedData": {
+        "applicantName": null,
+        "address": null,
+        "ownershipProofUploaded": false
+      }
+    },
+
+    "journeyStack": [
+      {
+        "journeyId": "BILLING_DISPUTE",
+        "journeyLevel": "L2",
+        "state": "PAUSED",
+        "pausedStep": "bill_amount_confirmation",
+
+        "execution": {
+          "executionArn": "arn:aws:states:...:execution:billing-456",
+          "status": "WAITING"
+        },
+
+        "pauseContext": {
+          "pausedAt": "2026-01-30T21:10:00Z",
+          "taskToken": "TASK_TOKEN_XYZ999"
+        },
+
+        "collectedData": {
+          "billMonth": "JAN",
+          "disputeReason": "High bill"
+        }
+      }
+    ],
+
+    "intentSwitch": {
+      "requestedJourney": null,
+      "requestedLevel": null,
+      "status": "NONE",
+      "requestedAt": null
+    },
+
+    "journeyLock": {
+      "isLocked": false,
+      "reason": null
+    },
+
+    "stackPolicy": {
+      "maxDepth": 3,
+      "overflowAction": "DROP_OLDEST"
+    },
+
+    "lastBotMessage": {
+      "text": "Please upload your ownership proof document.",
+      "expectsUserInput": true,
+      "expectedType": "FILE"
+    }
+  },
+
+  "systemFlags": {
+    "otpVerified": false,
+    "whatsappOptIn": true,
+    "abuseDetected": false,
+    "piiDetected": false
+  },
+
+  "orchestratorDecision": {
+    "decision": null,
+    "targetJourney": null,
+    "reason": null,
+    "nextUserMessage": null
+  }
+}
